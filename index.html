@@ -11,8 +11,64 @@
     
     <!-- Leaflet CSS for Maps -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,te,ta,kn,pa,mr,bn,ur',
+            autoDisplay: false
+          },
+          'google_translate_element'
+        );
+      }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+      /* Hide the default Google Translate widget and completely remove the top banner */
+      .goog-te-banner-frame.skiptranslate,
+      .goog-te-banner-frame,
+      iframe.goog-te-banner-frame {
+        display: none !important;
+        visibility: hidden !important;
+      }
+      
+      /* Reset the top body push that Google adds */
+      body {
+        top: 0px !important;
+        position: relative !important;
+      }
+      html {
+        height: 100%;
+        top: 0px !important;
+      }
+      
+      /* Hide the hover popups */
+      #goog-gt-tt, 
+      .goog-te-balloon-frame {
+        display: none !important;
+      }
+
+      /* Hide extra new Google containers */
+      .VIpgJd-ZVi9od-ORHb-OEVmcd {
+        display: none !important;
+      }
+
+      .goog-text-highlight {
+        background: none !important;
+        box-shadow: none !important;
+      }
+      
+      /* Hide original widget */
+      #google_translate_element {
+        display: none !important;
+      }
+    </style>
   </head>
   <body class="bg-[#0a0a0a] text-[#ededed] font-sans antialiased">
+    <div id="google_translate_element"></div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
